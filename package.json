@@ -6,6 +6,7 @@
     "@babel/core": "^7.16.0",
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
+    "@mui/icons-material": "^5.6.0",
     "@mui/material": "^5.6.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.3",
     "@svgr/webpack": "^5.5.0",
@@ -52,6 +53,7 @@
     "style-loader": "^3.3.1",
     "tailwindcss": "^3.0.2",
     "terser-webpack-plugin": "^5.2.5",
+    "use-local-storage-state": "^17.0.1",
     "web-vitals": "^2.1.0",
     "webpack": "^5.64.4",
     "webpack-dev-server": "^4.6.0",
@@ -84,10 +86,10 @@
   "devDependencies": {
     "eslint": "7.32.0",
     "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-react-app": "^7.0.0",
     "eslint-plugin-import": "2.25.3",
     "eslint-plugin-jsx-a11y": "6.5.1",
     "eslint-plugin-react": "7.28.0",
-    "eslint-config-react-app": "^7.0.0",
     "eslint-plugin-react-hooks": "4.3.0",
     "eslint-webpack-plugin": "^3.1.1"
   },
