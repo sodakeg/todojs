@@ -1,10 +1,11 @@
 import React from 'react';
 import { Button } from '@mui/material';
+import PropTypes from 'prop-types';
 
-function EditButton({ id }) {
+function EditButton({ id, handleDispatch }) {
   // TODO: to be implemented
   const editAction = () => {
-    console.log('Remove Todo');
+    console.log(`Edit Todo ${id}`);
   };
 
   return (
@@ -17,5 +18,10 @@ function EditButton({ id }) {
     </Button>
   );
 }
+
+EditButton.propTypes = {
+  id: PropTypes.number.isRequired,
+  handleDispatch: PropTypes.func.isRequired,
+};
 
 export default EditButton;
