@@ -1,6 +1,7 @@
 import React from 'react';
-import { Button } from '@mui/material';
+import { IconButton } from '@mui/material';
 import PropTypes from 'prop-types';
+import EditIcon from '@mui/icons-material/Edit';
 
 function EditButton({ id, handleDispatch }) {
   // TODO: to be implemented
@@ -9,13 +10,13 @@ function EditButton({ id, handleDispatch }) {
   };
 
   return (
-    <Button
+    <IconButton
       variant="contained"
       color="secondary"
       onClick={editAction}
     >
-      Edit
-    </Button>
+      <EditIcon />
+    </IconButton>
   );
 }
 

@@ -1,6 +1,7 @@
 import React from 'react';
-import { Button } from '@mui/material';
+import { IconButton } from '@mui/material';
 import PropTypes from 'prop-types';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 function DeleteButton({ id, handleDispatch }) {
   const removeAction = () => {
@@ -12,13 +13,13 @@ function DeleteButton({ id, handleDispatch }) {
   };
 
   return (
-    <Button
+    <IconButton
       variant="contained"
       color="error"
       onClick={removeAction}
     >
-      Delete
-    </Button>
+      <DeleteIcon />
+    </IconButton>
   );
 }
 
