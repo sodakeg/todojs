@@ -1,7 +1,8 @@
-import React from 'react';
+import { React, useState } from 'react';
 import { IconButton } from '@mui/material';
 import PropTypes from 'prop-types';
 import DeleteIcon from '@mui/icons-material/Delete';
+import ConfirmationDialog from './ConfirmationDialog';
 
 function DeleteButton({ id, handleDispatch }) {
   const removeAction = () => {
@@ -12,14 +13,41 @@ function DeleteButton({ id, handleDispatch }) {
     });
   };
 
+  const [openDialog, setOpenDialog] = useState(false);
+
+  const handleCancel = () => {
+    setOpenDialog(false);
+  };
+
+  const handleAccept = () => {
+    removeAction();
+    setOpenDialog(false);
+  };
+
+  const handleOpenDialog = () => {
+    setOpenDialog(true);
+  };
+
   return (
-    <IconButton
-      variant="contained"
-      color="error"
-      onClick={removeAction}
-    >
-      <DeleteIcon />
-    </IconButton>
+    <>
+      { openDialog ? (
+        <ConfirmationDialog
+          open={openDialog}
+          handleCancel={handleCancel}
+          handleAccept={handleAccept}
+          title="Delete Todo"
+          message={`Are you sure you want to delete Todo #${id}?`}
+        />
+      ) : null }
+
+      <IconButton
+        variant="contained"
+        color="error"
+        onClick={handleOpenDialog}
+      >
+        <DeleteIcon />
+      </IconButton>
+    </>
   );
 }
 
