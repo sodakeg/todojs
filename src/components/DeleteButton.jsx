@@ -2,10 +2,13 @@ import React from 'react';
 import { Button } from '@mui/material';
 import PropTypes from 'prop-types';
 
-function DeleteButton({ id }) {
-  // TODO: to be implemented
+function DeleteButton({ id, handleDispatch }) {
   const removeAction = () => {
     console.log(`Remove Todo ${id}`);
+    handleDispatch({
+      type: 'REMOVE',
+      payload: id,
+    });
   };
 
   return (
@@ -21,6 +24,7 @@ function DeleteButton({ id }) {
 
 DeleteButton.propTypes = {
   id: PropTypes.number.isRequired,
+  handleDispatch: PropTypes.func.isRequired,
 };
 
 export default DeleteButton;
