@@ -9,7 +9,7 @@ import EditButton from './EditButton';
 import DeleteButton from './DeleteButton';
 
 function TodoItem({
-  id, title, description, done, updatedAt,
+  id, title, description, done, updatedAt, handleDispatch,
 }) {
   const [expanded, setExpanded] = React.useState(false);
   return (
@@ -50,8 +50,8 @@ function TodoItem({
       </AccordionDetails>
 
       <AccordionActions>
-        <EditButton id={id} />
-        <DeleteButton id={id} />
+        <EditButton handleDispatch={handleDispatch} />
+        <DeleteButton id={id} handleDispatch={handleDispatch} />
       </AccordionActions>
     </Accordion>
   );
@@ -63,6 +63,7 @@ TodoItem.propTypes = {
   description: PropTypes.string.isRequired,
   done: PropTypes.bool.isRequired,
   updatedAt: PropTypes.string.isRequired,
+  handleDispatch: PropTypes.func.isRequired,
 };
 
 export default TodoItem;
