@@ -16,7 +16,7 @@ const initialTodoData = [
   {
     id: 3,
     title: 'You may remove messages',
-    description: 'By clicking the trash con',
+    description: 'By clicking the trash icon',
     done: false,
     updatedAt: window.Date.now(),
   },
