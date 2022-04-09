@@ -1,17 +1,29 @@
+/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { StyledEngineProvider } from '@mui/material/styles';
+import TodoList from './components/TodoList';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const init = () => {
+  const setInitData = () => {
+    // populate with initial data if empty
+    if (window.localStorage.length === 0) {
+      return import('./constants/initialTodoData').then(
+        (data) => window.localStorage.setItem('todoData', JSON.stringify(data.default)),
+      );
+    }
+    return Promise.resolve();
+  };
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+  setInitData().then(() => {
+    ReactDOM.render(
+      <StyledEngineProvider injectFirst>
+        <TodoList />
+      </StyledEngineProvider>,
+      document.getElementById('root'),
+    );
+  });
+};
+
+init();
