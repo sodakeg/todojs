@@ -7,11 +7,12 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 import EditButton from './EditButton';
 import DeleteButton from './DeleteButton';
+import DoneButton from './DoneButton';
 
 function TodoItem({
   id, title, description, done, updatedAt, handleDispatch,
 }) {
-  const [expanded, setExpanded] = React.useState(false);
+  const [expanded, setExpanded] = useState(false);
   return (
     <Accordion
       expanded={expanded}
@@ -24,9 +25,9 @@ function TodoItem({
 
       <AccordionSummary expandIcon={<ExpandMoreIcon />}>
         <Grid container direction="row" justifyContent="space-around" alignItems="baseline">
-          <Grid item xs="3">
+          <Grid item xs={3}>
             <Box sx={{ textDecoration: done ? 'line-through' : 'none' }}>
-              <Typography variant="h5" component="div" width="90%" flexShrink={0}>
+              <Typography variant="h6" component="div" width="90%" flexShrink={0}>
                 {title}
               </Typography>
             </Box>
@@ -57,6 +58,7 @@ function TodoItem({
           handleDispatch={handleDispatch}
         />
         <DeleteButton id={id} handleDispatch={handleDispatch} />
+        <DoneButton id={id} done={done} handleDispatch={handleDispatch} />
       </AccordionActions>
     </Accordion>
   );
