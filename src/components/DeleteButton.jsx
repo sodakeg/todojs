@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 import DeleteIcon from '@mui/icons-material/Delete';
 import ConfirmationDialog from './ConfirmationDialog';
 
-function DeleteButton({ id, handleDispatch }) {
+function DeleteButton(props) {
+  const { id, handleDispatch } = props;
   const removeAction = () => {
     console.log(`Remove Todo ${id}`);
     handleDispatch({
