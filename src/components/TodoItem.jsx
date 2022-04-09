@@ -50,7 +50,12 @@ function TodoItem({
       </AccordionDetails>
 
       <AccordionActions>
-        <EditButton handleDispatch={handleDispatch} />
+        <EditButton
+          id={id}
+          title={title}
+          description={description}
+          handleDispatch={handleDispatch}
+        />
         <DeleteButton id={id} handleDispatch={handleDispatch} />
       </AccordionActions>
     </Accordion>
