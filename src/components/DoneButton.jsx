@@ -1,4 +1,4 @@
-import React from 'react';
+import { React } from 'react';
 import { IconButton } from '@mui/material';
 import PropTypes from 'prop-types';
 import CheckBoxOutlineBlankOutlinedIcon from '@mui/icons-material/CheckBoxOutlineBlankOutlined';
