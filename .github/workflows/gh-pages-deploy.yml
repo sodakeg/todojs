@@ -19,7 +19,7 @@ jobs:
           cache: 'yarn'
       - run: |
           yarn install
-          yarn build
+          CI=false yarn build    # don't treat warnings as errors
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.3.0
         with:
